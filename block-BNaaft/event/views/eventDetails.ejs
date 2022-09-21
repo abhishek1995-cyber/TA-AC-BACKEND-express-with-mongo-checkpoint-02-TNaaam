@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class=" flex space-bw container">
+          <ul>
+            <li>
+              <a href="/">Evénement</a>
+            </li>
+          </ul>
+          <ul class="flex nav-menu">
+            <li>
+              <a href="/">Back</a>
+            </li>
+            <li>
+              <a href="/events/form">Add Event</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="details-section">
+            <div class="details-box">
+                <h2> <%= event.title %></h2>
+                <h2> <%= event.summary %></h2>
+                <h2><%= event.host %></h2>
+                <h2><%= event.startDate %></h2>
+                <h2><%= event.endDate %></h2>
+                <% event.category.forEach(c=>{ %>
+                    <span><%= c %></span>
+              <%  }) %>
+                <p><%= event.location %></p>
+                <h3><%= event.likes ? event.likes: 0 %></h3>
+                <a href="/events/<%= event._id %>/likes">
+                    <button>likes</button>
+                </a>
+            </div>
+            <div>
+                <a href="/events/<%= event._id %>/edit">
+                    <button>Edit</button>
+                </a>
+                <a href="/events/<%= event._id %>/delete">
+                    <button>Delete</button>
+                </a>
+            </div>
+            <div>
+                <form action="/events/<%= event._id %>/remarks" method="post">
+                    <textarea name="title" cols="30" rows="10"></textarea>
+                    <input type="submit" value="add comment">
+                </form>
+            </div>
+            <% event.remarks.forEach(remark=>{ %>
+                <div>
+                    <h4><%= remark.title %></h4>
+                </div>
+                <a href="/remarks/<%= remark._id %>/edit">
+                    <button>Edit</button>
+                </a>
+                <a href="/remarks/<%= remark._id %>/delete">
+                    <button>Delete</button>
+                </a>
+           <% }) %>
+        </section>
+      </main>
+</body>
+</html>

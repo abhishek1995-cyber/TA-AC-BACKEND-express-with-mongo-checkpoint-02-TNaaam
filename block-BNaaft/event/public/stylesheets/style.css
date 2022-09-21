@@ -1,0 +1,143 @@
+*{
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.container {
+  padding: 0 50px;
+  margin: 0 auto;
+}
+.flex{
+  display: flex;
+}
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.space-bw {
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  color: rgb(245, 245, 185);
+}
+
+
+/* my reset */
+.header {
+  background-color: rgb(86, 85, 85);
+  padding: 2.5rem 0;
+}
+
+.nav-menu  a {
+  margin-left: 2rem;
+}
+/* hero-section */
+
+
+.hero-section{
+  background-color: rgb(110, 125, 120);
+  text-align: center;
+  height: 88vh;
+}
+h1{
+  margin: 0;
+  padding-top: 16rem;
+  font-size: 5rem;
+  font-weight: 900;
+  color: white;
+}
+.hero-section p {
+  font-size: 2.5rem;
+  font-weight: 100;
+  color: white;
+}
+
+/* about */
+.about {
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 4rem 8rem;
+  line-height: 1.3;
+}
+
+/* footer */
+
+.footer{
+  background-color: rgb(174, 174, 239);
+  padding: 2.5rem 0;
+}
+.nav-footer a{
+  margin-left: 2rem;
+}
+
+/* event form */
+
+.form-container{
+  padding: 100px 300px;
+  background-color: rgb(85, 116, 116);
+}
+.legend{
+  margin-left: 37%;
+  font-size: 3rem;
+}
+input {
+  width: 100%;
+  margin: 15px 0;
+  height: 3rem;
+  background-color: wheat;
+}
+textarea {
+  background-color: wheat;
+}
+
+/* list */
+
+
+.list-container{
+  flex: 0 1 70%;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+  
+}
+.list-legend{
+  color: rgb(237, 127, 127);
+  font-size: 1.5rem;
+}
+.side-bar {
+  flex: 0 1 30%;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+.list-box {
+  box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.7);
+  width: 28%;
+  padding-top: 40px;
+  height: 200px;
+  text-align: center;
+  display: inline-block;
+  background-color: rgb(235, 235, 192);
+  margin-right: 2.5rem;
+}
+
+
+/* details */
+
+.details-section{
+  border: 1px solid cornflowerblue;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+
+
