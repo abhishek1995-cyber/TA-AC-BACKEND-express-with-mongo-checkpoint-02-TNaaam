@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+        <header class="header">
+            <nav class=" flex space-bw container">
+                <ul>
+                  <li>
+                    <a href="/">Evénement</a>
+                  </li>
+                </ul>
+                <ul class="flex nav-menu">
+                  <li>
+                    <a href="/">Back</a>
+                  </li>
+                  <li>
+                    <a href="/events/form">Add Events</a>
+                  </li>
+                </ul>
+              </nav>
+        </header>
+        <main class="list-main flex container space-bw">
+          <section class="list-container  flex ">
+            <% event.forEach(e=>{ %>
+            <div class="list-box">
+                  <h2><%= e.title %></h2>
+                  <a href="/events/<%= e._id %>">
+                    <button>Show Details</button>
+                  </a>
+                </div>
+             <% }) %>
+            
+        </section>
+        <section class="side-bar">
+          <fieldset>
+            <form action="/events" method="GET">
+              <legend class="list-legend">All categories
+                <select name="category" >
+                  <option value="">select</option>
+                  <option value="programming">programming</option>
+                  <option value="sports">sports</option>
+                  <option value="trekking">trekking</option>
+                </select>
+              </legend>
+              <legend class="list-legend">Event on locations
+                <input type="text" name="location" placeholder="locations">
+              </legend>
+              <legend class="list-legend">Events on date:
+                <input type="date" name="startDate" >
+                <input type="date" name="endDate">
+              </legend>
+              <input type="submit" value="submit">
+            </form>
+          </fieldset>
+        </section>
+        </main>
+</body>
+</html>

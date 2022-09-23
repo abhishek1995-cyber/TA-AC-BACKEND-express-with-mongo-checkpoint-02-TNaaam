@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class=" flex space-bw container">
+          <ul>
+            <li>
+              <a href="/">Evénement</a>
+            </li>
+          </ul>
+          <ul class="flex nav-menu">
+            <li>
+              <a href="/">Back</a>
+            </li>
+            <li>
+              <a href="/events/form">Add Event</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="form-container">
+            <fieldset class="fieldset" >
+                <legend class="legend">Event form</legend>
+                <form action="/events/<%= event._id %>" method="post" >
+                    <input type="text" name="title" placeholder="Title" value="<%= event.title %>">
+                    <textarea name="summary" id="" cols="99" rows="10"> <%= event.summary %></textarea>
+                    <input type="text" name="host" placeholder="Host" value="<%= event.host %>">
+                    <input type="date" name="startDate" placeholder="Start Date" value="<%= event.startDate %>">
+                    <input type="date" name="endDate" placeholder="End Date" value="<%= event.endDate %>">
+                    <input type="text" name="category" placeholder=" category" value="<%= event.category %>">
+                    <input type="text" name="location" placeholder="location" value="<%= event.location %>">
+                    <input type="submit" value="submit">
+                </form>
+            </fieldset>
+        </section>
+      </main>
+</body>
+</html>

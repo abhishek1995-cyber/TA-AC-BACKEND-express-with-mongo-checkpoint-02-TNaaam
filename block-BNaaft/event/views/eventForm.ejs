@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <!-- css -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class=" flex space-bw container">
+            <ul>
+              <li>
+                <a href="/">Evénement</a>
+              </li>
+            </ul>
+            <ul class="flex nav-menu">
+              <li>
+                <a href="/">Back</a>
+              </li>
+              <li>
+                <a href="/events">Events</a>
+              </li>
+            </ul>
+          </nav>
+    </header>
+    <main>
+        <section class="form-container">
+            <fieldset class="fieldset" >
+                <legend class="legend">Event form</legend>
+                <form action="/events/form" method="post" >
+                    <input type="text" name="title" placeholder="Title">
+                    <textarea name="summary" id="" cols="99" rows="10"></textarea>
+                    <input type="text" name="host" placeholder="Host">
+                    <input type="date" name="startDate" placeholder="Start Date">
+                    <input type="date" name="endDate" placeholder="End Date">
+                    <select name="category" >
+                      <option value="">category</option>
+                      <option value="programming">programming</option>
+                      <option value="sports">sports</option>
+                      <option value="trekking">trekking</option>
+                    </select>
+                    <input type="text" name="location" placeholder="location">
+                    <input type="submit" value="submit">
+                </form>
+            </fieldset>
+        </section>
+    </main>
+</body>
+</html>
