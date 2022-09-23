@@ -17,9 +17,35 @@ router.post('/form',(req,res,next)=>{
   })
 });
 router.get('/',(req,res,next)=>{
-  Event.find({},(err,event)=>{
+  // console.log(req.query);
+  var{category,location,startDate,endDate} = req.query;
+  var query = {};
+  if(category){
+    query.category = category;
+  }
+  if(location){
+    query.location = location;
+  }
+  if(startDate && endDate){
+    query.startDate = {$gte: startDate};
+    query.endDate = {$lte: endDate}
+  }
+  Event.find(query,(err,event)=>{
     if (err) return next(err);
-    res.render('eventlist',{event:event})
+    Event.distinct('category',(err, category)=>{
+      if (err) return next(err);
+      Event.distinct('location',(err,location)=>{
+        if (err) return next(err);
+        Event.distinct('startDate',(err,startDate)=>{
+          if (err) return next(err);
+          Event.distinct('endDate',(err,endDate)=>{
+            if (err) return next(err);
+            res.render('eventlist',{event,location,category});
+              console.log(event,category,location,startDate,endDate)
+          })
+        })
+      })
+    })
   })
 });
 

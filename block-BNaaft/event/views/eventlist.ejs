@@ -40,9 +40,14 @@
         </section>
         <section class="side-bar">
           <fieldset>
-            <form action="">
+            <form action="/events" method="GET">
               <legend class="list-legend">All categories
-                <input type="text" name="category" placeholder="categories">
+                <select name="category" >
+                  <option value="">select</option>
+                  <option value="programming">programming</option>
+                  <option value="sports">sports</option>
+                  <option value="trekking">trekking</option>
+                </select>
               </legend>
               <legend class="list-legend">Event on locations
                 <input type="text" name="location" placeholder="locations">
